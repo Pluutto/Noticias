@@ -1,12 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noticias – Agregador (ES / LATAM)</title>
+<style>
+  :root{
+    --bg:#0b0d10; --card:#12161b; --soft:#1b222a; --txt:#e9eef3; --muted:#9fb0be; --accent:#4db6ff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(11,13,16,.96),rgba(11,13,16,.7) 70%,transparent);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid #1e2730}
+  .wrap{max-width:1200px;margin:0 auto;padding:14px 18px}
+  .title{display:flex;align-items:center;gap:10px}
+  .title h1{margin:0;font-size:20px}
+  .grid{max-width:1200px;margin:12px auto;padding:0 18px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px}
+  @media (max-width:1000px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid #1e2730;border-radius:14px;overflow:hidden}
+  .card h2{margin:0;padding:12px 14px;border-bottom:1px solid #1e2730;font-size:16px;background:var(--soft)}
+  .card .inner{padding:12px 14px}
+  .list{display:grid;gap:10px}
+  .item{padding:10px 12px;border:1px solid #1f2832;border-radius:10px;background:#0f1317}
+  .item small{color:var(--muted)}
+  .badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:#0e2331;border:1px solid #1f3a4d;color:#9fd4ff;margin-right:6px}
+  .note{color:var(--muted);font-size:13px}
+  .livebox{aspect-ratio:16/9;width:100%;border:0;border-radius:10px;overflow:hidden;background:#000}
+  footer{max-width:1200px;margin:24px auto 40px;padding:0 18px;color:var(--muted);font-size:13px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media (max-width:600px){.cols{grid-template-columns:1fr}}
+  .btn{display:inline-block;background:#193247;border:1px solid #2b4e69;color:#cfeaff;padding:8px 10px;border-radius:8px}
+</style>
 </head>
 <body>
-    <h1>Bienvenido a mi página de noticias</h1>
-    <p>Este es un sitio de prueba en GitHub Pages.</p>
+
+<header>
+  <div class="wrap title">
+    <h1>🗞️ Agregador de noticias • ES / LATAM</h1>
+    <span class="note">Actualiza para ver lo último · Funciona en móvil / iPad / ordenador</span>
+  </div>
+</header>
+
+<main class="grid">
+  <!-- Columna izquierda: navegación de titulares rápidos -->
+  <section class="card">
+    <h2>🧭 Titulares (enlaces oficiales, se abren en pestaña nueva)</h2>
+    <div class="inner list">
+      <div class="item">
+        <span class="badge">España</span>
+        <a target="_blank" href="https://www.rtve.es/noticias/">RTVE Noticias</a>
+        <div class="note">Pública · nacional · vídeos y directo</div>
+      </div>
+      <div class="item">
+        <span class="badge">España</span>
+        <a target="_blank" href="https://elpais.com/">El País</a>
+        <div class="note">Suscripción · acceso completo con tu cuenta</div>
+      </div>
+      <div class="item">
+        <span class="badge">Cataluña</span>
+        <a target="_blank" href="https://www.lavanguardia.com/">La Vanguardia</a>
+        <div class="note">Barcelona y Cataluña · parte de pago</div>
+      </div>
+      <div class="item">
+        <span class="badge">Europa</span>
+        <a target="_blank" href="https://es.euronews.com/">Euronews (español)</a>
+        <div class="note">Enfoque europeo · texto y vídeo</div>
+      </div>
+      <div class="item">
+        <span class="badge">Mundo</span>
+        <a target="_blank" href="https://www.bbc.com/mundo">BBC Mundo</a>
+        <div class="note">Internacional · lenguaje claro</div>
+      </div>
+      <div class="item">
+        <span class="badge">Américas</span>
+        <a target="_blank" href="https://cnnespanol.cnn.com/">CNN en Español</a>
+        <div class="note">Última hora · Latinoamérica / EE.UU.</div>
+      </div>
+      <div class="item">
+        <span class="badge">Américas</span>
+        <a target="_blank" href="https://www.univision.com/noticias">Univision Noticias</a>
+        <div class="note">Vídeos y especiales para comunidad hispana</div>
+      </div>
+
+      <div class="item cols">
+        <a class="btn" target="_blank" href="https://www.rtve.es/play/videos/canales-lineales/24h/">▶ RTVE 24h (directo)</a>
+        <a class="btn" target="_blank" href="https://www.youtube.com/@euronewsespanol/live">▶ Euronews en español (YouTube)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Columna centro: “resumen” de medios de pago (títulos + enlaces) -->
+  <section class="card">
+    <h2>📝 Resumen de medios de pago (títulos + enlace)</h2>
+    <div class="inner list">
+      <div class="item">
+        <strong>El País – Portada</strong><br>
+        <a target="_blank" href="https://elpais.com/ultimas-noticias/">Últimas noticias</a> · 
+        <a target="_blank" href="https://elpais.com/espana/">España</a> · 
+        <a target="_blank" href="https://elpais.com/internacional/">Internacional</a>
+        <div class="note">* Si el artículo es de pago, inicia sesión con tu suscripción para leerlo completo.</div>
+      </div>
+      <div class="item">
+        <strong>La Vanguardia – Portada</strong><br>
+        <a target="_blank" href="https://www.lavanguardia.com/ultimas-noticias">Últimas</a> · 
+        <a target="_blank" href="https://www.lavanguardia.com/local/barcelona">Barcelona</a> · 
+        <a target="_blank" href="https://www.lavanguardia.com/politica">Política</a>
+        <div class="note">* Artículos premium requieren suscripción activa.</div>
+      </div>
+      <div class="item">
+        <strong>Consejos rápidos</strong>
+        <ul class="note">
+          <li>Guarda esta página en marcadores；每天刷新可看最新标题。</li>
+          <li>付费媒体这里只做“标题+入口”，尊重版权；登录后可阅读全文。</li>
+          <li>需要我把某个栏目单独做成“只看标题流”的轻页面也可以告诉我。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Columna derecha: zona de “directo / vídeo” -->
+  <section class="card">
+    <h2>📺 Directo / Vídeo</h2>
+    <div class="inner">
+      <p class="note">下方是官方直播入口（如被平台限制外链播放，点击标题在新页观看）。</p>
+
+      <div class="item">
+        <strong>RTVE 24h – directo</strong>
+        <div class="note">Página oficial（可全屏）：</div>
+        <a class="btn" target="_blank" href="https://www.rtve.es/play/videos/canales-lineales/24h/">Abrir RTVE 24h</a>
+      </div>
+
+      <div class="item">
+        <strong>Euronews (español) – live en YouTube</strong>
+        <div class="livebox">
+          <iframe class="livebox" src="https://www.youtube.com/embed/live_stream?channel=UCR8u2UQZr4-8f3L-5j9OQnQ"
+                  title="Euronews Español Live" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="note">若播放器被屏蔽，请点击下方按钮到 YouTube 观看：</div>
+        <p><a class="btn" target="_blank" href="https://www.youtube.com/@euronewsespanol/live">Ver en YouTube</a></p>
+      </div>
+
+      <div class="item">
+        <strong>Univision Noticias – vídeos</strong>
+        <p><a class="btn" target="_blank" href="https://www.univision.com/noticias">Abrir Univision</a></p>
+        <div class="note">部分电视台不允许第三方内嵌直播，已提供官方直达入口。</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Hecho para uso personal. Las marcas y contenidos pertenecen a sus respectivos medios. Esta página enlaza a fuentes oficiales y
+  muestra únicamente títulos / accesos para respetar derechos de autor.</p>
+</footer>
+
 </body>
 </html>
